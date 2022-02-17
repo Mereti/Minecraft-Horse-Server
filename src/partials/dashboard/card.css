@@ -1,0 +1,85 @@
+.cardstyle{
+    box-shadow: 5px 5px 8px gray;
+   /* background-color: #65A30D;*/
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    color: #ffffff;
+    background-image: url("https://raw.githubusercontent.com/Mereti/Photo/main/zielono_mi.png");
+    background-size: cover;
+}
+
+.cardstyle:hover{
+    background-image: url("https://raw.githubusercontent.com/Mereti/Photo/main/bialo-mi.png");
+    color: #65A30D;
+}
+
+.gamerCard{
+    box-shadow: 5px 5px 8px gray;
+    background-color: #ffffff;
+    color: #65A30D;
+}
+.image-style{
+    border-color:#191919 ;
+    border-width: medium;
+}
+.bgck-col-footer{
+    border-color:#191919 ;
+}
+.text-gamer-profile{
+    color: #191919;
+}
+.gamer-card-margin{
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+.padding-side{
+    padding-left: 2rem;
+    padding-right: 12rem;
+    margin-left: 2rem;
+}
+.center-style{
+    margin-left: 25rem;
+}
+.button-event-style{
+    color: #65A30D;
+}
+.button-event-style:hover{
+    text-decoration: #65A30D underline  ;
+}
+.modal-style-background{
+    background: url("../../assets/img/k-1.jpg") ;
+    background-size: cover;
+    background-position: center;
+}
+.stud-image-bcgk{
+    background: url("../../assets/img/k-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 18rem;
+    padding-bottom: 0rem;
+}
+.text-lime-600{
+    color: #65A30D!important;
+}
+.card-horse-margin{
+    margin-top: 2rem;
+}
+@media only screen and (max-width: 700px) {
+    .hidden-elements-image{
+        display:none !important;
+    }
+}
+.button-store-style{
+    background-color: #191919;
+    color: #ffffff;
+}
+.button-store-style:hover{
+    background-color: #65A30D;
+    color: #ffffff;
+}
+.button-margin{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+

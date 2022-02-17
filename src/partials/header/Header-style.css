@@ -1,0 +1,22 @@
+.background-panel{
+    /*background-image: url('./Comp-1.gif');*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bgck-col-footer{
+    background-color: #191919;
+}
+.text-col-nav{
+    color: #ffffff;
+}
+
+.inDashboard{
+    background-color: #65A30D;
+}
+
+@media only screen and (max-width: 650px) {
+    .hidden-elements{
+        display:none !important;
+    }
+}
+
