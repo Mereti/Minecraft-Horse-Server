@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from "react";
 import {Popover, Transition} from "@headlessui/react";
-import logo from "../../assets/svg/kuniek.svg";
+import logo from "../../assets/img/logomc.png";
 import MenuIcon from "@heroicons/react/outline/MenuIcon";
 import XIcon from "@heroicons/react/outline/XIcon";
 import "./HomeNavigation.scss";

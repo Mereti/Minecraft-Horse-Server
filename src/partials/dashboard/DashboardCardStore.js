@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {get_request} from "../../service/api_requests";
+import {get_request, post_request} from "../../service/api_requests";
 import Button from "@material-tailwind/react/Button";
 import moment from "moment";
 import JoinEventModal from "../../components/Modals/Dashboard/JoinEventModal";
-import k1 from "../../assets/img/kon.jpg";
+
 
 
 function useForceUpdate(){
@@ -44,6 +44,56 @@ function DashboardCardStore({user}) {
         getRequest();
         forceUpdate();
     }, [user]);
+
+    const pointsChange = (storeItem) =>{
+        if (user.points >= storeItem.price) {
+            let pointsData = {
+                email: user.email,
+                points: user.points - storeItem.price
+            }
+            post_request(
+                'http://127.0.0.1:8080/gamer/changepoints',{pointsData},true
+            ).then(response => {
+                if (response.status === 200) {
+                    console.log("worked?")
+                    console.log("punkty= " +user.points - storeItem.price)
+                } else if (response.status === 401) {
+                    console.log("maybenot?")
+                    console.log("punkty= " +user.points - storeItem.price)
+                } else {
+                    alert("Coś poszło nie tak - status code: " + response.status)
+                    console.log("punkty= " +user.points - storeItem.price)
+                }
+            }).catch(error => {
+                alert("Wprowadzono nieprawidłowe dane")
+            })
+        }
+    }
+    const buyAction = (storeItem) => {
+        if (user.points >= storeItem.price) {
+            console.log("storeItem", storeItem)
+
+            post_request(
+                'http://127.0.0.1:8080/equipment/new/item',
+                {
+                    gamerId: user,
+                    idItem: storeItem
+                },
+                true
+            ).then(response => {
+                if (response.status  === 200) {
+                    console.log("worked?")
+                } else if (response.status  === 401){
+                    console.log("maybenot?")
+                } else {
+                    alert("Coś poszło nie tak - status code: "+ response.status)
+                }
+            }).catch(error=>{
+                alert("Wprowadzono nieprawidłowe dane" )
+            })
+        }
+    }
+
     return (
         <div className="flex flex-col col-span-full sm:col-span-12 xl:col-span-12 bg-white shadow-lg rounded-sm border border-gray-200">
             <div>
@@ -69,11 +119,9 @@ function DashboardCardStore({user}) {
                                         <div className="text-lg text-center mt-4 mb-4">
                                             Cena: {storeItem.price} punktów
                                         </div>
-                                        <div className="button-margin ">
-                                            <a className="w-10 items-center mt-4 px-4 py-3 border border-transparent text-base font-medium rounded-md bg-white button-store-style md:py-4 md:text-lg md:px-10">
-                                                Kup
-                                            </a>
-                                        </div>
+                                            <button type="button"  onClick={()=>pointsChange(storeItem.idItem)} className=" items-center mt-4 px-4 py-3 border border-transparent text-base font-medium rounded-md bg-white button-store-style md:py-4 md:text-lg md:px-10">
+                                                {user.points < storeItem.price ? "Potrzebujesz "+(storeItem.price-user.points)+" punktów" : "masz: " + (user.points)+ "Kup"}
+                                            </button>
                                     </div>
                                 </div>: "" })}
                     </div>

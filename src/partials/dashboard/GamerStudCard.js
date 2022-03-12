@@ -58,7 +58,8 @@ function CheckStud(stud,user,openModal,setOpenModal,cancelButtonRef,loadStuds){
                             <h2 className="font-bold text-white text-2xl">Stadnina</h2>
                             <a className="text-white font-bold mt-3">Nie posiadasz stadniny? <span>Załóż ją już dzisiaj!</span></a>
                         </header>
-                       <button type="button" className="mt-4 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-lime-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" onClick={() => {setOpenModal(true)}}>
+                       <button type="button" className="mt-4 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-lime-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+                               onClick={() => {setOpenModal(true)}}>
                            Załóż swoją stadninę
                        </button>
                 </div>

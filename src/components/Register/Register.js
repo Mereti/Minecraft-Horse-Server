@@ -231,7 +231,7 @@ class Register extends Component{
                                 <button
                                     type="submit"
                                     value="Submit"
-                                    className="w-10  items-center  px-8 py-3 border border-transparent text-base font-medium rounded-md bg-white button-style md:py-4 md:text-lg md:px-20">
+                                    className="items-center  border border-transparent text-base font-medium rounded-md bg-white button-style md:py-4 md: px-4 md:text-lg ">
                                     Zarejestruj Się
                                 </button>
                             </div>
