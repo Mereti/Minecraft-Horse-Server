@@ -104,7 +104,7 @@ function DashboardCardStore({user}) {
                     <div className="mt-4 mb-4 grid grid-cols-2 gap-4 items-center">
                         {store.map((storeItem) => {
                             return store.find(store => store.idItem !== storeItem.idItem) !== undefined ?
-                                <div className="card-horse-margin  rounded overflow-hidden shadow-lg">
+                                <div key ={storeItem.idItem} className="card-horse-margin  rounded overflow-hidden shadow-lg">
                                     {/*   <img className="w-full hidden-elements-image" src={item.idItem.imgSrc} width="128" height="128"/>*/}
                                     <div className="px-6 py-4">
                                         <div className="font-bold text-2xl mb-4 text-gray-700">
@@ -119,9 +119,10 @@ function DashboardCardStore({user}) {
                                         <div className="text-lg text-center mt-4 mb-4">
                                             Cena: {storeItem.price} punktów
                                         </div>
-                                            <button type="button"  onClick={()=>pointsChange(storeItem.idItem)} className=" items-center mt-4 px-4 py-3 border border-transparent text-base font-medium rounded-md bg-white button-store-style md:py-4 md:text-lg md:px-10">
+                                            <button type="button"  onClick={console.log("dziala przycisk", storeItem.idItem)} className=" items-center mt-4 px-4 py-3 border border-transparent text-base font-medium rounded-md bg-white button-store-style md:py-4 md:text-lg md:px-10">
                                                 {user.points < storeItem.price ? "Potrzebujesz "+(storeItem.price-user.points)+" punktów" : "masz: " + (user.points)+ "Kup"}
                                             </button>
+
                                     </div>
                                 </div>: "" })}
                     </div>

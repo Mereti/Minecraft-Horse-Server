@@ -33,7 +33,7 @@ function Dashboard(props){
                         spendTime: response.body.spendTime,
                         roleId: response.body.role.roleId,
                         roleName: response.body.role.roleName,
-                        email: response.body.gamerEmail,
+                        email: response.body.email,
                         avatar: null
                     };
 
