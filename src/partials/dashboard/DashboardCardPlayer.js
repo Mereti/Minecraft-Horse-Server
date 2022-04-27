@@ -1,9 +1,30 @@
 import React, {useRef, useState} from 'react';
 import ChangePasswordModal from "../../components/Modals/Dashboard/ChangePasswordModal";
+import {post_request} from "../../service/api_requests";
 
 function DashboardCardPlayer({user}) {
     const [openModal, setOpenModal] = useState(false)
     const cancelButtonRef = useRef(null)
+
+    const deleteUser = (user) =>{
+        post_request('http://127.0.0.1:8080/deleteuser)',
+            {
+                email: user.email
+            },
+            true
+        ).then(response =>
+        {
+            if (response.status  === 200) {
+                console.log("worked")
+            } else if (response.status  === 401){
+                console.log("maybenot?")
+            } else {
+                alert("Coś poszło nie tak - status code: "+ response.status)
+            }
+        }).catch(error=>{
+            alert("Wprowadzono nieprawidłowe dane" )
+        })
+    }
 
     return (
 

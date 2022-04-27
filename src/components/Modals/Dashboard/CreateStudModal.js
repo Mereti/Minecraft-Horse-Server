@@ -29,18 +29,18 @@ export default function CreateStudModal({user,openModal,setOpenModal,cancelButto
             let body = {
                 gamerId: {
                     gamerId: user.id,
-                    gamerEmail: user.email,
+                    email: user.email,
                     nickname: user.nickname,
                     role:{
                         roleId: 2,
                         roleName: "admin"
                     }
                 },
-                gamerStudName: input["studName"]
+                studName: input["studName"]
             }
             console.log("bodyStud",body)
             post_request(
-                'http://127.0.0.1:8080/stud/newstud/',
+                'http://127.0.0.1:8080/stud/newstud',
                 body,
                 true
 
@@ -54,7 +54,7 @@ export default function CreateStudModal({user,openModal,setOpenModal,cancelButto
                     errorsNew["studName"] = "Nie utworzono stadniny";
                     setErrors(errorsNew);
                     forceUpdate();
-                }
+                } console.log("bodystud");
             });
         }
 

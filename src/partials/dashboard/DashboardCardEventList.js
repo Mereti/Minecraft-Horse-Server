@@ -36,7 +36,8 @@ function DashboardCardEventList(user) {
         true
     ).then(response => {
       if(response.body.length > 0){
-        setEvents(response.body)
+        let arrayEv = response.body.filter(x => x.end === false);
+            setEvents(arrayEv);
       }
     })
     get_request(
