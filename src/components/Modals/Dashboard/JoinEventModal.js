@@ -71,7 +71,7 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
         loadHorses()
     }, [event,openModal,setOpenModal,user]);
     return (
-        <Transition.Root show={openModal} as={Fragment}>
+        <Transition.Root  show={openModal} as={Fragment}  key={horses.horseId} >
             <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" initialFocus={cancelButtonRef} onClose={(e)=>{
                 setOpenModal(e);
                 setInput({});
@@ -89,8 +89,6 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
                     >
                         <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                     </Transition.Child>
-
-                    {/* This element is to trick the browser into centering the modal contents. */}
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
             &#8203;
           </span>
@@ -103,16 +101,14 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
+                        <div  className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
                             <div className="bg-white pt-5 pb-4 sm:p-4 sm:pb-4">
                                 <div className="p-3">
                                     <Dialog.Title as="h3" className="mb-4 text-center text-lg leading-6 font-medium text-gray-900">
                                         Wybierz konia
                                     </Dialog.Title>
-                                    {/* Table */}
                                     <div className="overflow-x-auto">
                                         <table className="table-auto w-full">
-                                            {/* Table header */}
                                             <thead className="text-xs uppercase text-gray-400 bg-gray-50 rounded-sm">
                                             <tr>
                                                 <th className="p-2">
@@ -137,7 +133,7 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
                                             {/* Table body */}
                                             <tbody className="text-sm font-medium divide-y divide-gray-100">
                                             {horses.map((item) => (
-                                                    <tr>
+                                                    <tr  key={horses.horseId} >
                                                         <td className="p-2">
                                                             <div className="flex items-center">
                                                                 <div className="text-gray-800">{item.name}</div>
@@ -147,19 +143,19 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
                                                             <div className="text-center">{item.breed === undefined ? "" : item.breed.horseBreed}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-green-500">{item.value}</div>
+                                                            <div className="text-center green-col-tab">{item.value}</div>
                                                         </td>
                                                         <td className="p-2">
                                                             <div className="text-center text-amber-500">{item.hungry}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-light-blue-500">{item.thirst}</div>
+                                                            <div className="text-center text-amber-500">{item.thirst}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-light-blue-500">
+                                                            <div className="text-center green-col-tab">
                                                                 <Button size="small"
                                                                         color="green"
-                                                                        className="px-0 mx-1"
+                                                                        className="button-join"
                                                                         onClick={()=>{
                                                                             sendHorse(item)
                                                                             setOpenModal(false);

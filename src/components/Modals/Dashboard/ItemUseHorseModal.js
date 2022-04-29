@@ -203,19 +203,19 @@ export default function ItemUseHorseModal({user,chooseItem,openModal,setOpenModa
                                                             <div className="text-center">{item.breed === undefined ? "" : item.breed.horseBreed}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-green-500">{item.value}</div>
+                                                            <div className="text-center green-col-tab">{item.value}</div>
                                                         </td>
                                                         <td className="p-2">
                                                             <div className="text-center text-amber-500">{item.hungry}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-light-blue-500">{item.thirst}</div>
+                                                            <div className="text-center green-col-tab">{item.thirst}</div>
                                                         </td>
                                                         <td className="p-2">
-                                                            <div className="text-center text-light-blue-500">
+                                                            <div className="text-center ">
                                                                 <Button size="small"
                                                                         color="green"
-                                                                        className="px-0 mx-1"
+                                                                        className="button-join"
                                                                         onClick={()=>{
                                                                             itemSwitch(chooseItem,item)
                                                                             setOpenModal(false);

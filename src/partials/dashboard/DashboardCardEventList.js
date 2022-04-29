@@ -53,8 +53,8 @@ function DashboardCardEventList(user) {
 
   return (
       <div className="flex flex-col col-span-full sm:col-span-12 xl:col-span-12 bg-white shadow-lg rounded-sm border border-gray-200">
-        <JoinEventModal user={user} event = {event} openModal={openModal} setOpenModal={setOpenModal} cancelButtonRef={cancelButtonRef}/>
-        <div>
+        <JoinEventModal  user={user} event = {event} openModal={openModal} setOpenModal={setOpenModal} cancelButtonRef={cancelButtonRef}/>
+        <div key={events.eventId}>
           <div className="bg-white">
             <header className="px-5 py-4 border-b border-gray-100">
               <h2 className="font-bold text-gray-800 text-2xl">Zawody</h2>
@@ -62,7 +62,7 @@ function DashboardCardEventList(user) {
             <div className="mt-4 mb-4 grid grid-cols-2 gap-4 items-center">
               {events.map((item) => {
                     return results.find(result => result.eventResultId !== item.eventId) !== undefined ?
-                        <div className="card-horse-margin grid grid-cols-2 rounded overflow-hidden shadow-lg">
+                        <div key={item.eventId} className="card-horse-margin grid grid-cols-2 rounded overflow-hidden shadow-lg">
                           <img className="w-full hidden-elements-image" src={k1}/>
                           <div className="px-6 py-4">
                             <div className="font-bold text-xl mb-2 text-gray-700">{item.eventType === undefined ? "" : item.eventType.eventTypeName}</div>

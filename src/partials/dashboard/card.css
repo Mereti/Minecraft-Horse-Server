@@ -82,4 +82,18 @@
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
+.button-join{
+    color: #65A30D;
+    background-color: white;
+    border: #65A30D;
+    border-bottom-width: 1em;
+}
+.button-join:hover{
+    background-color: #65A30D;
+    color: white;
+}
+.green-col-tab{
+    color:#65A30D;
+}
+
 
