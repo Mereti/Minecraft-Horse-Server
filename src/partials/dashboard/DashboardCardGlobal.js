@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import LineChart from '../../charts/LineChart01';
 import style from "./card.css";
 import EventElementPanel from './EventElementPanel';
 

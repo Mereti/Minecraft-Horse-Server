@@ -112,7 +112,6 @@ function DashboardCardStore({user}) {
                         {store.map((storeItem) => {
                             return store.find(store => store.idItem !== storeItem.idItem) !== undefined ?
                                 <div key ={storeItem.idItem} className="card-horse-margin  rounded overflow-hidden shadow-lg">
-                                    {/*   <img className="w-full hidden-elements-image" src={item.idItem.imgSrc} width="128" height="128"/>*/}
                                     <div className="px-6 py-4">
                                         <div className="font-bold text-2xl mb-4 text-gray-700">
                                             {storeItem.nameItem}

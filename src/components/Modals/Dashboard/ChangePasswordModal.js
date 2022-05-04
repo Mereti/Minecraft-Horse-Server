@@ -51,7 +51,6 @@ export default function ChangePasswordModal({user,openModal,setOpenModal,cancelB
                 }
             });
         }
-
     }
     const validate = (name) =>{
         let inputNew = input;

@@ -28,7 +28,6 @@ function DashboardCardHorseList(stud) {
     forceUpdate();
   }, [stud]);
   return (
-
       <div className="flex flex-col col-span-full  sm:col-span-12 xl:col-span-12 bg-white shadow-lg rounded-sm border border-gray-200">
         <div >
           <div className="bg-white">

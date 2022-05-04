@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './Register-style.scss';
 import {get_request, post_request} from "../../service/api_requests";
 import ErrorModal from "../Modals/ErrorModal";
-// import { useForm, Controller } from "react-hook-form";
 
 class Register extends Component{
     constructor(props) {
@@ -69,21 +68,6 @@ class Register extends Component{
                 console.log(error)
             })
         }
-
-
-
-        // if(this.validate()){
-        //     console.log(this.state);
-        //
-        //     let input = {};
-        //     input["name"] = "";
-        //     input["email"] = "";
-        //     input["password"] = "";
-        //     input["passwordRepeat"] = "";
-        //     this.setState({input:input});
-        //
-        //     alert('Demo Form is submited');
-        // }
     }
 
     validate(name){

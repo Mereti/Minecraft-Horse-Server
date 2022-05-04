@@ -130,7 +130,6 @@ export default function JoinEventModal({user,event,openModal,setOpenModal,cancel
                                                 </th>
                                             </tr>
                                             </thead>
-                                            {/* Table body */}
                                             <tbody className="text-sm font-medium divide-y divide-gray-100">
                                             {horses.map((item) => (
                                                     <tr  key={horses.horseId} >

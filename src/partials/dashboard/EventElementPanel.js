@@ -19,7 +19,6 @@ function EventElementPanel(user) {
     const buttonRef = useRef();
 
     useEffect(() => {
-        // /get/eventlistgamer
         get_request(
             'http://127.0.0.1:8080/event/get/eventlistgamer',
             true

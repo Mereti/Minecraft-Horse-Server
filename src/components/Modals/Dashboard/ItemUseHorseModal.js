@@ -92,7 +92,6 @@ export default function ItemUseHorseModal({user,chooseItem,openModal,setOpenModa
     }
 
     const loadHorses = () => {
-        console.log("moj useeeereeeeekkk--------------------- ",user)
         if(user !== undefined && user !== null){
             get_request(
                 'http://127.0.0.1:8080/stud/studs',
@@ -111,7 +110,6 @@ export default function ItemUseHorseModal({user,chooseItem,openModal,setOpenModa
                                 if(response.body.length > 0){
                                     let horseArray = response.body.filter(x => x.gamerStud.gamerStudId === stud.gamerStudId);
                                     setHorses(horseArray);
-                                    console.log("MOje KUNIKI: ",horses)
                                 }
                             })
                         }
@@ -145,8 +143,6 @@ export default function ItemUseHorseModal({user,chooseItem,openModal,setOpenModa
                     >
                         <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                     </Transition.Child>
-
-                    {/* This element is to trick the browser into centering the modal contents. */}
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
             &#8203;
           </span>

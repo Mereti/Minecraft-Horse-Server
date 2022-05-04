@@ -71,7 +71,6 @@ function DashboardCardPlayer({user}) {
                 </div>
             </div>
         </div>
-
     );
 }
 
